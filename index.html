@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+
+
+        *{
+            text-align: center;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        input{
+            color: black;
+        }
+
+        button{
+            color: black;
+        }
+
+        body{
+            background: rgb(19, 9, 87);
+        }
+
+    .highlight{
+        background-color: yellow; 
+        color: black;
+    }
+    .underline{text-decoration: underline;}
+    .bold{font-weight: bold;}
+
+    .visible{
+        display: block;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+
+
+    .thebtn{
+        pointer-events: none;
+        background-color: gray;
+    }
+
+
+
+    </style>
+
+
+
+<script>
+
+
+    function toggle(id){
+
+        const el = document.getElementById(id)
+
+        el.classList.replace('visible','hidden')
+
+    }
+
+
+    /**
+     * @param el {HTMLButtonElement}
+     */
+    function toggleButton(el){
+
+        el.textContent = 'Clicked'
+        el.classList.add('thebtn')
+
+
+
+    }
+
+
+    function addClass(){
+     
+        const val = document.getElementById('in').value?.trim()
+
+        if (val){
+
+            const el = document.getElementById('elm')
+
+            el.classList.toggle(val)
+
+
+        }
+    
+    }
+    
+    
+    </script>
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+<p id="elm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae odit maxime voluptas obcaecati laudantium enim debitis quia voluptates sed blanditiis sequi exercitationem nesciunt fugit, soluta totam impedit accusantium. Laudantium, numquam.</p>
+
+<input placeholder="highlight,underline,bold" id="in" type="text">
+<button onclick="addClass()">Add Class</button>
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+<p class="visible" id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae odit maxime voluptas obcaecati laudantium enim debitis quia voluptates sed blanditiis sequi exercitationem nesciunt fugit, soluta totam impedit accusantium. Laudantium, numquam.</p>
+
+<p class="visible" id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam est repudiandae dolores. At libero, saepe nostrum accusantium est eum quibusdam. Ut qui at iste officiis sapiente culpa, obcaecati natus odit.</p>
+
+<p class="visible" id="p3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore quisquam voluptate sit modi aliquid veritatis, expedita molestias sed dolor labore iure veniam omnis pariatur similique natus laboriosam corporis, eos voluptates!</p>
+
+<button onclick="toggle('p1')">Hide p1</button>
+<button onclick="toggle('p2')">Hide p2</button>
+<button onclick="toggle('p3')">Hide p3</button>
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+<button onclick="toggleButton(this)">Click me</button>
+
+</body>
+
+
+
+</html>
